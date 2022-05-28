@@ -17,7 +17,9 @@ public class Concierge {
 	private int balai;
 	
 	/**
-	 * Setter pour l'attribut balai.
+	 * Setter pour l'attribut balai. Je garde ce setter parce qu'on pourrait
+	 * avoir besoin de changer le nombre de balais durant la durée de vie d'un
+	 * objet de type Concierge.
 	 * @param les_balais Le nombre de balai qui sera assigné à l'attribut balai.
 	 */
 	public void setBalai(int les_balais) {
@@ -53,9 +55,7 @@ public class Concierge {
 	}
 	
 	/**
-	 * Getter pour l'attribut balai. Je garde ce setter parce qu'on aura
-	 * besoin de changer le nombre de balais durant la durée de vie d'un
-	 * objet de type Concierge.
+	 * Getter pour l'attribut balai. 
 	 * @return Le nombre de balais du concierge.
 	 */
 	public int getBalai() {
