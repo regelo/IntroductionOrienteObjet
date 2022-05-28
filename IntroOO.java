@@ -8,9 +8,7 @@ public class IntroOO {
 	public static void main(String[] args) {
 		Scanner clavier = new Scanner(System.in);
 
-		ArrayList<Concierge> concierges = new ArrayList<Concierge>();
-		ArrayList<Correctrice> correctrices = new ArrayList<Correctrice>();
-		ArrayList<Secretaire> secretaires = new ArrayList<Secretaire>();
+		ArrayList<Employee> employees = new ArrayList<Employee>();
 		
 		// On obtient les infos de trois personnes.
 		for (int i = 0; i < 3; i++) {
@@ -29,45 +27,39 @@ public class IntroOO {
 				// Concierge
 				int balai = obtenirEntier(clavier, "nombre de balais", 0, 50);
 				Concierge un_concierge = new Concierge(nom, matricule, balai);
-				concierges.add(un_concierge);
+				employees.add(un_concierge);
 				break;
 			case 2:
 				// Correctrice
 				int heures_contrat = obtenirEntier(clavier, "heures du contrat", 0, 100);
 				Correctrice une_correctrice = new Correctrice(nom, matricule, heures_contrat);
-				correctrices.add(une_correctrice);
+				employees.add(une_correctrice);
 				break;
 			case 3:
 				// Secrétaire
 				int taux_horaire = obtenirEntier(clavier, "taux horaire", 15, 200);
 				Secretaire une_secretaire = new Secretaire(nom, matricule, taux_horaire);
-				secretaires.add(une_secretaire);
+				employees.add(une_secretaire);
 				break;
 			}
 		}
 
 		clavier.close();
 
-		// Affichage des infos des concierges
-		for(int i=0 ; i<concierges.size() ; i++) {
-			Concierge notre_concierge = concierges.get(i);
-			notre_concierge.afficherNomMatricule();
-			System.out.println("Le salaire hebdomadaire de " + notre_concierge.getNom() + " est " + notre_concierge.calculerSalaireHebdomadaire() + " $");
+		int total_des_salaires = 0;
+		
+		// Affichage des infos des employées
+		for(int i=0 ; i<employees.size() ; i++) {
+			Employee notre_employee = employees.get(i);
+			notre_employee.afficherNomMatricule();
+			// L'appel de la fonction calculerSalaireHebdomadaire() est l'appel polymorphique.
+			int salaire_hebdomadaire = notre_employee.calculerSalaireHebdomadaire();
+			total_des_salaires = total_des_salaires + salaire_hebdomadaire;
+			System.out.println("Le salaire hebdomadaire de " + notre_employee.getNom() + " est " + salaire_hebdomadaire + " $");
 		}
 		
-		// Affichage des infos des correctrices
-		for(int i=0 ; i<correctrices.size() ; i++) {
-			Correctrice notre_correctrice = correctrices.get(i);
-			notre_correctrice.afficherNomMatricule();
-			System.out.println("Le salaire hebdomadaire de " + notre_correctrice.getNom() + " est " + notre_correctrice.calculerSalaireHebdomadaire() + " $");
-		}
-		
-		// Affichage des infos des secrétaires
-		for(int i=0 ; i<secretaires.size() ; i++) {
-			Secretaire notre_secretaire = secretaires.get(i);
-			notre_secretaire.afficherNomMatricule();
-			System.out.println("Le salaire hebdomadaire de " + notre_secretaire.getNom() + " est " + notre_secretaire.calculerSalaireHebdomadaire() + " $");
-		}
+		System.out.println("Le total des salaires pour cette semaine est " + total_des_salaires + " $");
+
 	}
 
 	/**
