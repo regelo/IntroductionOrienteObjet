@@ -34,9 +34,9 @@ public class IntroOO {
 		// Affichage des infos des trois concierges
 		for(int i=0 ; i<concierges.size() ; i++) {
 			Concierge notre_concierge = concierges.get(i);
-			System.out.print("Concierge " + notre_concierge.getNom());
-			System.out.print(" dont le matricule est " + notre_concierge.getMatricule());
-			System.out.println(" possède " + notre_concierge.getBalai() + " balais.");
+			notre_concierge.afficherNomMatricule();
+			notre_concierge.afficherBalais();
+			System.out.println("Le salaire hebdomadaire de " + notre_concierge.getNom() + " est " + notre_concierge.calculerSalaireHebdomadaire() + " $");
 		}
 	}
 

@@ -92,4 +92,29 @@ public class Concierge {
 			this.balai = les_balais;
 		}		
 	}
+	
+	/**
+	 * Cette procédure affiche le nom et le matricule du Concierge.
+	 */
+	public void afficherNomMatricule() {
+		System.out.println("Concierge " + this.nom + " #" + this.matricule);
+	}
+	
+	/**
+	 * Cette procédure affiche le nombre de balais du Concierge.
+	 */
+	public void afficherBalais() {
+		System.out.println("  - Ce concierge possède " + this.balai + " balais.");
+	}
+	
+	/**
+	 * Cette fonction calcule et retourne le salaire hebdomadaire du Concierge,
+	 * tel que défini dans les exigences.
+	 * @return Le salaire hebdomadaire du concierge.
+	 */
+	public int calculerSalaireHebdomadaire() {
+		// Supposons que selon les exigences, son salaire hebdomadaire est
+		// 900$ plus son nombre de balais.
+		return 900 + this.balai;
+	}
 }
