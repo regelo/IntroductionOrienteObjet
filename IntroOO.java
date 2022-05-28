@@ -24,9 +24,9 @@ public class IntroOO {
 
 			// Création d'un concierge et ajout de ses détails.
 			Concierge un_concierge = new Concierge();
-			un_concierge.nom = nom;
-			un_concierge.matricule = matricule;
-			un_concierge.balai = balai;
+			un_concierge.setNom(nom);
+			un_concierge.setMatricule(matricule);
+			un_concierge.setBalai(balai);
 			
 			// Ajout du concierge au tableau.
 			concierges.add(un_concierge);
@@ -37,9 +37,9 @@ public class IntroOO {
 		// Affichage des infos des trois concierges
 		for(int i=0 ; i<concierges.size() ; i++) {
 			Concierge notre_concierge = concierges.get(i);
-			System.out.print("Concierge " + notre_concierge.nom);
-			System.out.print(" dont le matricule est " + notre_concierge.matricule);
-			System.out.println(" possède " + notre_concierge.balai + " balais.");
+			System.out.print("Concierge " + notre_concierge.getNom());
+			System.out.print(" dont le matricule est " + notre_concierge.getMatricule());
+			System.out.println(" possède " + notre_concierge.getBalai() + " balais.");
 		}
 	}
 
