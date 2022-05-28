@@ -23,10 +23,7 @@ public class IntroOO {
 			int balai = obtenirEntier(clavier, "nombre de balais", 0, 50);
 
 			// Création d'un concierge et ajout de ses détails.
-			Concierge un_concierge = new Concierge();
-			un_concierge.setNom(nom);
-			un_concierge.setMatricule(matricule);
-			un_concierge.setBalai(balai);
+			Concierge un_concierge = new Concierge(nom, matricule, balai);
 			
 			// Ajout du concierge au tableau.
 			concierges.add(un_concierge);
