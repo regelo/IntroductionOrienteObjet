@@ -8,9 +8,7 @@ public class IntroOO {
 	public static void main(String[] args) {
 		Scanner clavier = new Scanner(System.in);
 
-		ArrayList<String> noms = new ArrayList<String>();
-		ArrayList<Integer> matricules = new ArrayList<Integer>();
-		ArrayList<Integer> balais = new ArrayList<Integer>();
+		ArrayList<Concierge> concierges = new ArrayList<Concierge>();
 		
 		// On obtient les infos de trois concierges.
 		for (int i = 0; i < 3; i++) {
@@ -24,18 +22,22 @@ public class IntroOO {
 			// Lecture du nombre de balais du concierge.
 			int balai = obtenirEntier(clavier, "nombre de balais", 0, 50);
 
-			noms.add(nom);
-			matricules.add(matricule);
-			balais.add(balai);
+			Concierge un_concierge = new Concierge();
+			un_concierge.nom = nom;
+			un_concierge.matricule = matricule;
+			un_concierge.balai = balai;
+			
+			concierges.add(un_concierge);
 		}
 
 		clavier.close();
 
 		// Affichage des infos des trois concierges
 		for(int i=0 ; i<3 ; i++) {
-			System.out.print("Concierge " + noms.get(i));
-			System.out.print(" dont le matricule est " + matricules.get(i));
-			System.out.println(" possède " + balais.get(i) + " balais.");
+			Concierge notre_concierge = concierges.get(i);
+			System.out.print("Concierge " + notre_concierge.nom);
+			System.out.print(" dont le matricule est " + notre_concierge.matricule);
+			System.out.println(" possède " + notre_concierge.balai + " balais.");
 		}
 	}
 
