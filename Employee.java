@@ -56,5 +56,5 @@ public abstract class Employee {
 	 * hebdomadaire et retourner le salaire calculé.
 	 * @return Le salaire hebdomadaire calculé.
 	 */
-	abstract int calculerSalaireHebdomadaire();
+	public abstract int calculerSalaireHebdomadaire();
 }
